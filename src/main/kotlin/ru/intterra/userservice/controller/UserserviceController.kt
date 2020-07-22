@@ -12,7 +12,7 @@ class UserserviceController(
 ) {
 
     @PostMapping("/simplify")
-    fun simplify(@RequestBody users: List<UserDto>): List<UserDto> {
+    fun simplify(@RequestBody users: List<UserDto>):  Map<String, Set<String>> {
         return userService.simplify(users);
     }
 }
