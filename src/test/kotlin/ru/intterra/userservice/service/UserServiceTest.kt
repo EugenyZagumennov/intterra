@@ -32,5 +32,6 @@ class UserServiceTest {
         assertTrue(result.containsKey("user1"))
         assertTrue(result.containsKey("user3"))
         assertEquals(mutableSetOf("xxx@ya.ru", "foo@gmail.com", "lol@mail.ru", "ups@pisem.net", "aaa@bbb.ru"), result["user1"])
+        assertEquals(mutableSetOf("xyz@pisem.net", "vasya@pupkin.com"), result["user3"])
     }
 }

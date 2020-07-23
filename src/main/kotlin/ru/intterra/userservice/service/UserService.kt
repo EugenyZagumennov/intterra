@@ -18,13 +18,16 @@ class UserService : IUserService {
                 }
             }
 
+            var toUser: String
             if (emailDuplicate == null) {
-                result.put(user.name, user.emails)
+                toUser = user.name
+                result.put(toUser, user.emails)
             } else {
-                result[emailMap[emailDuplicate]]?.addAll(user.emails)
+                toUser = emailMap[emailDuplicate]!!
+                result[toUser]?.addAll(user.emails)
             }
             for(email in user.emails) {
-                emailMap.put(email, user.name)
+                emailMap.put(email, toUser)
             }
         }
 
